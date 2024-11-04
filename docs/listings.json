@@ -1,0 +1,15 @@
+[
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/netSci/netSci_LTM_project.html",
+      "/projects/spatial_UHI/spatial_UHI.html",
+      "/projects/longitudinal/longitudinal_project.html",
+      "/projects/timeSeries/timeSeries_mac_project.html",
+      "/projects/CDS/CDS_project.html",
+      "/projects/EM/EM_project.html",
+      "/projects/cla/cla_project.html",
+      "/projects/causal/causal_project.html"
+    ]
+  }
+]

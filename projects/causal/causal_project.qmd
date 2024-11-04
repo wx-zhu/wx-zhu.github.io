@@ -1,0 +1,36 @@
+---
+title: "Self-Perception and Art? A Causal Inference"
+description: |
+  An in-depth assessment of the potential causal relationship between Self-Perception of Creativity and Participation in Arts using data set from National Archive of Data on Arts & Culture.
+date: 05-02-2023
+image: causal_DAG.png
+image-alt: quizgrader logo
+categories:
+  - Causal Inference
+  - R
+  - Research
+about:
+  template: solana
+  image: causal_DAG.png
+---
+
+> You can access the accompanying [*slides*](https://drive.google.com/file/d/1v_AOjV9Chf2u_KD2W_8NZCmUdZZe6rVv/view?usp=sharing) for a comprehensive overview! :)
+
+In collaboration with Abbie Natkin, we conducted a comprehensive assessment to explore the potential causal relationship between self-perception of creativity (treatment) and participation in the arts (outcome) in the capstone class *Casual Inference*. To accomplish this, we analyzed a [dataset](https://www.icpsr.umich.edu/web/NADAC/studies/37853) obtained from the National Archive of Data on Arts & Culture, consisting of 3,447 adults with diverse demographics and socioeconomic backgrounds in the United States.
+
+We constructed a Directed Acyclic Graph (DAG) graph to capture the causal relationship between variables, drawing upon extensive background research and expert knowledge. This graph allowed us to identify the minimal set of sufficient conditions for the exchangeability, which included the following listed variables. By considering these factors, we aimed to minimize bias and confounding variables in our analysis.
+
+-   `AGE4`: A categorical variable includes 4 age levels (18-29, 30-44, 45-59, 60+)
+-   `Q9: Industry`: Includes 20 categories of job industry
+-   `EDUC`: Include 14 categories of education level
+-   `INCOME`: Include 18 categories of income level
+-   `INTERNET`: Whether people has access to internet or not
+-   `Q2_: Personality`: Quantitative variables mutated to capture of personality related to creativity
+
+![](causal_DAG.png)
+
+To estimate the average causal effect (ACE), we employed two different models: *Outcome Regression and Inverse Probability Weighting (IPW) via Random Forest*. Through these models, we were able to reveal a strong and statistically significant positive relationship between the treatment variable (self-perception of creativity) and participation in the arts. The obtained results indicated a p-value of 7.77e-11 and all positive confidence intervals, further supporting the existence of a positive causal relationship.
+
+![](causal_output.png)
+
+We then conducted a sensitivity analysis to ensure the robustness and validity of our findings. This analysis allowed us to evaluate the impact of varying unmeasured confounding variables on our results. The stability and validity of the estimates were confirmed, reaffirming the positive causal relationship between self-perception of creativity and participation in the arts.

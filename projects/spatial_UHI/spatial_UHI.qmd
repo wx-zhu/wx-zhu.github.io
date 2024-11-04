@@ -1,0 +1,21 @@
+---
+title: "Spatial Analysis of Urban Heat Island in Twin Cities & Phoenixs"
+description: |
+  Urban heat island effect (UHI) poses significant health risks and varies across American cities. This report uses Spatial Autoregressive (SAR) and Conditional Autoregressive (CAR) models to analyze UHI trends in Minneapolis-St. Paul and Phoenix, comparing model performance between the two cities.
+date: 12-09-2023
+image: UHI.png
+image-alt: quizgrader logo
+categories:
+  - Correlated Data
+  - Spatial Data 
+  - R
+  - Research
+about:
+  template: solana
+---
+
+> You can access our final report of this project a [*html*](UHI_report.html) version here, and a [*formal report*](https://drive.google.com/file/d/10uo1A-ca3Q7GfS6AljfxR1g5W5OvSJFR/view?usp=sharing) version here, as well as the [*slides*](https://drive.google.com/file/d/1_4ZcG6PKenJkF1HDkHaxfJ1I4DWK4Ce-/view?usp=sharing) for the final presentation. :)
+
+In collaboration with Marshall Roll, we conducted a comprehensive assessment to provide a rigorous spatial analysis of these trends in Minneapolis-St. Paul and Phoenix and to compare model similarity and performance between these two cities. Our analysis confirms that race, income, and house value are significantly connected to UHI distribution, but individual spatial models can help to pinpoint unique distribution patterns by city that can then be used to inform policy implementation.
+
+

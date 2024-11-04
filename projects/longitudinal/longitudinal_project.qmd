@@ -1,0 +1,20 @@
+---
+title: "Long-Term Effects of Speed Processing Training on Older Adults"
+description: |
+  Using robust Generalized Estimating Equations (GEE) model, we identified statistically significant improvements in speed processing among adults who received  training.
+date: 11-07-2023
+image: longitudinal.png
+image-alt: quizgrader logo
+categories:
+  - Correlated Data
+  - Longitudinal Data 
+  - R
+about:
+  template: solana
+---
+
+
+> You can access our final [*report*](LongitudinalReport.html) of this project here. :)
+
+In collaboration with Eric Wang, we conducted a comprehensive assessment to explore the influence of speed-processing training on older adults. To accomplish this, we analyzed the data from the [Advanced Cognitive Training for Independent and Vital Elderly (ACTIVE) Study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3934012/), which is the first large-scale, randomized trial to show that cognitive training improves cognitive function in community-dwelling older adults up to 5 years and to show evidence of transfer of that training to daily function. 
+

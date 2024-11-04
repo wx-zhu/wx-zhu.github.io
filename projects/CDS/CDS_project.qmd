@@ -1,0 +1,23 @@
+---
+title: "Exploring CIC-DUX4 Sarcoma Surfaceome by RNA-Sequencing"
+description: |
+  An in-depth assessment of the potential causal relationship between Self-Perception of Creativity and Participation in Arts using data set from National Archive of Data on Arts & Culture.
+date: 08-30-2023
+image: CDS_heatmap.png
+image-alt: quizgrader logo
+categories:
+  - Pediatric disease
+  - Bulk RNA-Seq analysis
+  - Research
+  - High-Performance Computing (HPC)
+about:
+  template: solana
+---
+
+During my research internship in [Bosnakovski Lab](https://med.umn.edu/pediatrics/research/research-laboratories-and-programs/bosnakovski-lab) in the Department of Pediatrics at the University of Minnesota, I focused on investigating genes encoding surface proteins related to CIC-DUX4 sarcoma (CDS), a rare and aggressive pediatric cancer with a median survival of less than two years.
+
+Throughout my research, I conducted Differential Experssion analysis on generated cell lines and tumor samples using `DESeq2` and `texima` packages. This analytical approach enabled the identification of genes exhibiting altered expression levels. The multiple test correction was undertaken using the Benjamini and Hochberg method, with a stringent criterion of adjusted p-value \< 0.05. I also crafted impactful visual aids, including heatmaps, volcano plots, and waterfall plots. These tools played a pivotal role in conveying the intricacies of gene expression patterns, making the research findings accessible and comprehensible to a broader audience. One of the highlights of this research endeavor was the identification of a subset of 19 genes, characterized by their dual attributes: inclusion in the surfaceome gene repertoire and consistent differential expression across cell lines following iP300w treatment. These genes represent a promising next step for further exploration and potential antibody development to CDS.
+
+I was honored to present this study at the [Masonic Cancer Center Research Symposium 2023](https://cancer.umn.edu/events/masonic-cancer-center-research-symposium-1) and [2024 Joint Mathematics Meetings (JMM)](https://www.jointmathematicsmeetings.org/meetings/national/jmm2024/2300_program.html). Here is my [*poster*](https://drive.google.com/file/d/1k57Yca9sB_MrSVVBasW5qEHusZ66J-ge/view?usp=sharing). 
+
+![](lab.png)

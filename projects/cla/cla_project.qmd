@@ -1,0 +1,27 @@
+---
+title: "Matrix Completion and Recommendation Systems"
+description: "How does Netflix always know exactly which movies you like? Uncover recommendation system using Applied Singular Value Thresholding (SVT) and Cosine Similarity."
+date: 05-04-2023
+image: cla_table.png
+image-alt: quizgrader logo
+categories:
+  - Computational Linear Algebra
+  - Recommender System
+  - R
+about:
+  template: solana
+---
+
+> To access the detailed findings and insights from our project, please download the complete paper [*here*](https://drive.google.com/file/d/1nRmWyg3OE0pp7Tqb5y-84UgqV9jUzLCz/view).
+
+I collaborated with Shengyuan Wang on this project, driven by our shared curiosity to unravel the mystery behind Netflix's recommendation system, which seems to have an uncanny ability to predict the movies we'll enjoy. To tackle the challenge presented by large and sparse user-item matrices in collaborative filtering for recommendation systems, we leveraged advanced techniques such as *Singular Value Thresholding (SVT) and Cosine Similarity* using [MoiveLens Latest Dataset](https://grouplens.org/datasets/movielens/latest/).
+
+```{r, echo=FALSE, fig.align='center', out.width='80%', fig.cap="Demonstration of Matrix Completion Method"}
+knitr::include_graphics("cla_matrix.png")
+```
+
+Through our efforts, we successfully built a personalized recommendation system that harnessed user ratings and the ratings of similar users. This involved employing SVT and Nuclear Norm for matrix completion and utilizing Cosine Similarity to compute user similarity. As a result, our system delivered highly accurate and reliable recommendations that outperformed baseline methods, as measured by the Root Mean Square Error (RMSE) metric.
+
+```{r, echo=FALSE, fig.align='center', out.width='60%', fig.cap="Top 10 Recommended Films and Corresponding Cosine Similarity Scores For User 3"}
+knitr::include_graphics("cla_table.png")
+```

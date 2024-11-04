@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Wenxuan Zhu</title>
+<title>Projects – Wenxuan Zhu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,9 +31,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./images/icon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -66,7 +69,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -74,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -89,11 +150,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link active" href="./projects.html" aria-current="page"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -104,80 +165,360 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Projects</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#about-wenxuan" id="toc-about-wenxuan" class="nav-link active" data-scroll-target="#about-wenxuan">About Wenxuan</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  <li><a href="#a-little-more-about-me" id="toc-a-little-more-about-me" class="nav-link" data-scroll-target="#a-little-more-about-me">A little more about Me</a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Bulk RNA-Seq analysis">Bulk RNA-Seq analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Causal Inference">Causal Inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Computational Linear Algebra">Computational Linear Algebra <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Correlated Data">Correlated Data <span class="quarto-category-count">(3)</span></div><div class="category" data-category="High-Performance Computing (HPC)">High-Performance Computing (HPC) <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Longitudinal Data">Longitudinal Data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Network Science">Network Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Pediatric disease">Pediatric disease <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Recommender System">Recommender System <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Research">Research <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Spatial Data">Spatial Data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistical Algorithm">Statistical Algorithm <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Time Series Data">Time Series Data <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="images/wzhu.jpeg" class="about-image
-  round " style="height: 20em; width: 20em;">
-    <div class="about-links">
-  <a href="mailto:zhuwx@umich.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://github.com/wx-zhu" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://drive.google.com/file/d/" class="about-link" rel="" target="">
-     <span class="about-link-text">Résumé</span>
-  </a>
-</div>
+
+<p>Check out my projects below to see some of my previous work using public data.</p>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
   </div>
-  <div class="about-contents"><div id="intro-heading">
-<section id="about-wenxuan" class="level2">
-<h2 data-anchor-id="about-wenxuan">About Wenxuan</h2>
-<p>Hi, I’m Wenxuan Zhu (<a href="https://namedrop.io/wenxuanzhu" target="_blank" rel="noopener">Pronunciation</a>). <br></p>
-<p>I am a Biostatistics MS student at University of Michigan, Ann Arbor. Previously, I graduated from Macalester College with a major in Statistics with a minor in Economics. <br></p>
-<p>I’m passionate about using data to address societal challenges and have enjoyed applying statistical methods across diverse fields, including public health, social sciences, and machine learning. Check out my <a href="https://wx-zhu.github.oi/projects.html">Projects</a> tab to explore my skills and see examples of my work.</p>
-</section>
-</div></div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
 </div>
-
-<section id="education" class="level3">
-<h3 data-anchor-id="education">Education</h3>
-<p><strong>University of Michigan, Ann Arbor</strong>, MI<br>
-MS in Biostatistics, Expected May 2026</p>
-<p><strong>Macalester College</strong>, Saint Paul, MN<br>
-BA in Statistics, Minor in Economics, Graduated May 2024</p>
-</section>
-<section id="a-little-more-about-me" class="level2">
-<h2 data-anchor-id="a-little-more-about-me">A little more about Me</h2>
-<p>Outside of academics, I enjoy capturing photos of the sky, hiking with family and friends, savoring delicious foods, solving puzzles, visiting museums, and immersing myself in mystery fiction books. However, what I cherish most is the constant exploration of my interests and the pure joy that comes with it! :)</p>
-<div>
-
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Network Science,R" data-listing-date-sort="1714104000000" data-listing-file-modified-sort="1730694106579" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="79">
+<a href="./projects/netSci/netSci_LTM_project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/netSci/LTM_animation_greedy.gif" class="thumbnail-image card-img" style="height: 150px;" alt="quizgrader logo">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Linear Threshold Model and Simulation on Random Graphs
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Network Science'); return false;">
+Network Science
 </div>
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p><img src="images/me_2.jpg" class="img-fluid" style="width:30.0%"> <img src="images/sky.JPG" class="img-fluid" style="width:30.0%"> <img src="images/me_3.jpeg" class="img-fluid" style="width:30.0%"> <img src="images/puzzle.JPG" class="img-fluid" style="width:30.0%"> <img src="images/me_5.jpeg" class="img-fluid" style="width:30.0%"> <img src="images/art.jpeg" class="img-fluid" style="width:30.0%"></p>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
 </div>
 </div>
+<div class="card-text listing-description">
+<p>Linear Threshold Model (LTM) explores how influence spreads through networks, mapping out who adopts ideas and when.</p>
 </div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
 
+</div>
+<div class="listing-date">
+Apr 26, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Correlated Data,Spatial Data,R,Research" data-listing-date-sort="1702098000000" data-listing-file-modified-sort="1730690014963" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="101">
+<a href="./projects/spatial_UHI/spatial_UHI.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/spatial_UHI/UHI.png" class="thumbnail-image card-img" style="height: 150px;" alt="quizgrader logo">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Spatial Analysis of Urban Heat Island in Twin Cities &amp; Phoenixs
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Correlated Data'); return false;">
+Correlated Data
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Spatial Data'); return false;">
+Spatial Data
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Research'); return false;">
+Research
+</div>
+</div>
+<div class="card-text listing-description">
+Urban heat island effect (UHI) poses significant health risks and varies across American cities. This report uses Spatial Autoregressive (SAR) and Conditional Autoregressive…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
 
+</div>
+<div class="listing-date">
+Dec 9, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Correlated Data,Longitudinal Data,R" data-listing-date-sort="1699333200000" data-listing-file-modified-sort="1730690045206" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="86">
+<a href="./projects/longitudinal/longitudinal_project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/longitudinal/longitudinal.png" class="thumbnail-image card-img" style="height: 150px;" alt="quizgrader logo">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Long-Term Effects of Speed Processing Training on Older Adults
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Correlated Data'); return false;">
+Correlated Data
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Longitudinal Data'); return false;">
+Longitudinal Data
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<div class="card-text listing-description">
+<p>Using robust Generalized Estimating Equations (GEE) model, we identified statistically significant improvements in speed processing among adults who received training.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
 
-</section>
+</div>
+<div class="listing-date">
+Nov 7, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="Correlated Data,Time Series Data,R" data-listing-date-sort="1698033600000" data-listing-file-modified-sort="1730692303695" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3513">
+<a href="./projects/timeSeries/timeSeries_mac_project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/timeSeries/timeSeries_pred.png" class="thumbnail-image card-img" style="height: 150px;" alt="quizgrader logo">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Time Series Analysis of Macalester Main Campus Electricity Usage
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Correlated Data'); return false;">
+Correlated Data
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Time Series Data'); return false;">
+Time Series Data
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<div class="card-text listing-description">
+<p>Case study of <span>Macalester College</span> in St.&nbsp;Paul, MN uses time series analysis to model and forecast energy use using the campus’ main meter.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
 
-</main> <!-- /main -->
+</div>
+<div class="listing-date">
+Oct 23, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="Pediatric disease,Bulk RNA-Seq analysis,Research,High-Performance Computing (HPC)" data-listing-date-sort="1693368000000" data-listing-file-modified-sort="1730695151936" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="214">
+<a href="./projects/CDS/CDS_project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/CDS/CDS_heatmap.png" class="thumbnail-image card-img" style="height: 150px;" alt="quizgrader logo">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exploring CIC-DUX4 Sarcoma Surfaceome by RNA-Sequencing
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Pediatric disease'); return false;">
+Pediatric disease
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Bulk RNA-Seq analysis'); return false;">
+Bulk RNA-Seq analysis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Research'); return false;">
+Research
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('High-Performance Computing (HPC)'); return false;">
+High-Performance Computing (HPC)
+</div>
+</div>
+<div class="card-text listing-description">
+An in-depth assessment of the potential causal relationship between Self-Perception of Creativity and Participation in Arts using data set from National Archive of Data on…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
+</div>
+<div class="listing-date">
+Aug 30, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="Statistical Algorithm,R" data-listing-date-sort="1683518400000" data-listing-file-modified-sort="1730689671005" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="81">
+<a href="./projects/EM/EM_project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/EM/EM_image.png" class="thumbnail-image card-img" style="height: 150px;" alt="quizgrader logo">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Expectation Maximization Algorithm and its Applications
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Statistical Algorithm'); return false;">
+Statistical Algorithm
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<div class="card-text listing-description">
+<p>An interactive R bookdown website on the EM Algorithm, showcasing comprehensive content, coding examples, and practical applications.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
+</div>
+<div class="listing-date">
+May 8, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-categories="Computational Linear Algebra,Recommender System,R" data-listing-date-sort="1683172800000" data-listing-file-modified-sort="1730689691064" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="169">
+<a href="./projects/cla/cla_project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/cla/cla_table.png" class="thumbnail-image card-img" style="height: 150px;" alt="quizgrader logo">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Matrix Completion and Recommendation Systems
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Computational Linear Algebra'); return false;">
+Computational Linear Algebra
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Recommender System'); return false;">
+Recommender System
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<div class="card-text listing-description">
+How does Netflix always know exactly which movies you like? Uncover recommendation system using Applied Singular Value Thresholding (SVT) and Cosine Similarity.
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
+</div>
+<div class="listing-date">
+May 4, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-categories="Causal Inference,R,Research" data-listing-date-sort="1683000000000" data-listing-file-modified-sort="1730693779408" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="324">
+<a href="./projects/causal/causal_project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/causal/causal_DAG.png" class="thumbnail-image card-img" style="height: 150px;" alt="quizgrader logo">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Self-Perception and Art? A Causal Inference
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Causal Inference'); return false;">
+Causal Inference
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Research'); return false;">
+Research
+</div>
+</div>
+<div class="card-text listing-description">
+An in-depth assessment of the potential causal relationship between Self-Perception of Creativity and Participation in Arts using data set from National Archive of Data on…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
+</div>
+<div class="listing-date">
+May 2, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -198,6 +539,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
