@@ -1,7 +1,7 @@
 ---
 title: "Time Series Analysis of Macalester Main Campus Electricity Usage"
 description: |
-  Case study of [Macalester College](https://www.macalester.edu/) in St. Paul, MN uses time series analysis to model and forecast energy use using the campus' main meter.
+  A case study of [Macalester College](https://www.macalester.edu/) in St. Paul, MN uses time series analysis to model and forecast energy use using the campus' main meter.
 date: 10-23-2023
 image: timeSeries_pred.png
 image-alt: quizgrader logo
@@ -15,7 +15,6 @@ format:
     toc-location: right
 bibliography: Library.bib
 ---
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message=FALSE, warnings=FALSE, 
@@ -31,10 +30,9 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warnings=FALSE,
 
 <br>
 
-
 ### Introduction
 
-To combat the harmful effects of climate change, many post-secondary institutions across the world are seeking to reduce their energy use and invest in renewable energy sources. At Macalester College, several initiatives are ongoing to reduce the institution's carbon footprint, including the pursuit of zero waste, significant reductions of carbon emissions, and investment in solar and wind energy sources. Many of these initiatives connect to the college's larger goal of achieving carbon neutrality by 2025. [@mac_sustainability] However, this goal is currently being re-evaluated due to ongoing challenges in implementation strategies and concerns about the long-term sustainability of the project. According to a Mac Weekly article, achieving this goal by 2025 "would necessitate a 2.9% annual reduction in carbon emissions." [@Porter_Diaz_2023] Following the COVID-19 pandemic, it is unclear if continuing to pursue these goals will be the best way for Macalester to make a positive impact in reducing its carbon footprint and improving its sustainability and if it would even be possible to do so given current levels of demand for electricity use on the campus. This report aims to provide context for the college's levels of electricity use as it relates to their long-term goal of carbon neutrality. We aim to shed light on trends in Macalester College's electricity use by analyzing the Campus' Main Electric Meter since 2013 using time series analysis techniques and forecast Macalester's electricity use over the next two years using SARIMA modeling. 
+To combat the harmful effects of climate change, many post-secondary institutions across the world are seeking to reduce their energy use and invest in renewable energy sources. At Macalester College, several initiatives are ongoing to reduce the institution's carbon footprint, including the pursuit of zero waste, significant reductions of carbon emissions, and investment in solar and wind energy sources. Many of these initiatives connect to the college's larger goal of achieving carbon neutrality by 2025. [@mac_sustainability] However, this goal is currently being re-evaluated due to ongoing challenges in implementation strategies and concerns about the long-term sustainability of the project. According to a Mac Weekly article, achieving this goal by 2025 "would necessitate a 2.9% annual reduction in carbon emissions." [@Porter_Diaz_2023] Following the COVID-19 pandemic, it is unclear if continuing to pursue these goals will be the best way for Macalester to make a positive impact in reducing its carbon footprint and improving its sustainability and if it would even be possible to do so given current levels of demand for electricity use on the campus. This report aims to provide context for the college's levels of electricity use as it relates to their long-term goal of carbon neutrality. We aim to shed light on trends in Macalester College's electricity use by analyzing the Campus' Main Electric Meter since 2013 using time series analysis techniques and forecast Macalester's electricity use over the next two years using SARIMA modeling.
 
 ```{r, out.width = "300px", fig.align='center'}
 knitr::include_graphics("mac_logo.png")
@@ -42,14 +40,13 @@ knitr::include_graphics("mac_logo.png")
 
 ### Methods
 
-To assess Macalester's electricity usage over time, the college uses Energy Star Portfolio Manager to track campus buildings' energy outputs. Macalester collects data across several electricity meters, some of which measure off-campus student and faculty housing and other property owned by the college. This report includes only the main-campus electricity meter, which is listed under the address of the Leonard Center for Athletics. This meter measures energy output for all main campus buildings including residence halls, academic buildings, athletic complexes, and other on-campus office spaces. The meter aggregates measurements monthly, measuring the total energy usage between the first and last day of the month in kilowatt-hours. [@energyStar] The raw data was then pre-processed to yield the daily average energy use for each month between the first entry in January 2013 and the most recent in March 2023. 
+To assess Macalester's electricity usage over time, the college uses Energy Star Portfolio Manager to track campus buildings' energy outputs. Macalester collects data across several electricity meters, some of which measure off-campus student and faculty housing and other property owned by the college. This report includes only the main-campus electricity meter, which is listed under the address of the Leonard Center for Athletics. This meter measures energy output for all main campus buildings including residence halls, academic buildings, athletic complexes, and other on-campus office spaces. The meter aggregates measurements monthly, measuring the total energy usage between the first and last day of the month in kilowatt-hours. [@energyStar] The raw data was then pre-processed to yield the daily average energy use for each month between the first entry in January 2013 and the most recent in March 2023.
 
-Time series analysis on the data was carried out by identifying and removing the trend and seasonality from the data to estimate the true error process. Analyzing the trend of Macalester's energy use helps to contextualize ongoing sustainability and carbon reduction initiatives; analyzing the seasonality sheds light on yearly patterns in energy usage. To estimate trend, we use a b-spline of degree 2 with 2 knots in January 2018 and January 2021, meaning we fit a piecewise function with three components, one modeling the data until January 2018, one modeling between January 2018 and January 2021, and the other modeling after. [@deBoor] 
+Time series analysis on the data was carried out by identifying and removing the trend and seasonality from the data to estimate the true error process. Analyzing the trend of Macalester's energy use helps to contextualize ongoing sustainability and carbon reduction initiatives; analyzing the seasonality sheds light on yearly patterns in energy usage. To estimate trend, we use a b-spline of degree 2 with 2 knots in January 2018 and January 2021, meaning we fit a piecewise function with three components, one modeling the data until January 2018, one modeling between January 2018 and January 2021, and the other modeling after. [@deBoor]
 
 To capture the seasonality, the detrended data was modeled by linear regression with explanatory variables month and semester, a binary variable indicating whether the majority of the month took place during the academic year. Three outlying measurements in 2020 and 2022 were retained as they had no discernible impact on the model. Furthermore, the Macalester College annual energy use reports for 2020 and 2022 revealed substantial multi-site electricity equipment updates across the main campus, including the Carnegie Hall Transformer, Wallace Library Rare Books Liebert Unit, Rice/Olin Lab Exhaust Fan Replacement, 77 Mac Boiler Replacement, LED Lighting Retrofit Projects, and more [@mac_energy_report]. These updates contributed to energy savings. This information indicates that the three outliers were not a result of measurement errors, equipment failures, or significant machinery changes leading to a reduced output. Consequently, we did not include these outliers in the model, as the Macalester report suggests that they were functioning properly and should be considered part of the overall seasonality pattern going forward.
 
-Following the removal of seasonality, the remaining errors were analyzed to discern any remaining patterns not captured by trend and seasonality models. These errors were then modeled using several candidate AR, MA, and ARMA models, evaluating the most appropriate choice through the sample autocorrelation function, the sample partial autocorrelation function, normalized Q-Q plots, p-values for the Ljung-Box statistic (a test to see if sample autocorrelations are nonzero), and BIC (a measure of goodness of fit). ([@Box_Pierce_1970, @Schwarz_1978]) Finally, the candidate model incorporating trend, seasonality, and errors was fit and predictions for the next 24 months were made using the `sarima.for` function in R. 
-
+Following the removal of seasonality, the remaining errors were analyzed to discern any remaining patterns not captured by trend and seasonality models. These errors were then modeled using several candidate AR, MA, and ARMA models, evaluating the most appropriate choice through the sample autocorrelation function, the sample partial autocorrelation function, normalized Q-Q plots, p-values for the Ljung-Box statistic (a test to see if sample autocorrelations are nonzero), and BIC (a measure of goodness of fit). ([@Box_Pierce_1970, @Schwarz_1978]) Finally, the candidate model incorporating trend, seasonality, and errors was fit and predictions for the next 24 months were made using the `sarima.for` function in R.
 
 ```{r results = "hide", warning = FALSE}
 library(tidyverse)
@@ -95,7 +92,7 @@ df_Leonard %>%
   theme(plot.caption = element_text(hjust = 0.5))
 ```
 
-The seasonal variations can be seen in Figure 2, which highlights that energy use tends to be higher in the winter months and lower in the summer months, when demand for energy is lower due to the lack of students on-campus and need for constant heating. 
+The seasonal variations can be seen in Figure 2, which highlights that energy use tends to be higher in the winter months and lower in the summer months, when demand for energy is lower due to the lack of students on-campus and need for constant heating.
 
 ```{r, fig.align='center'}
 ann_color <- factor(ifelse(df_Leonard$outlier_adj == TRUE, "red", 
@@ -124,7 +121,6 @@ df_Leonard %>%
 ```
 
 To capture the trend, we use three candidate models: a b-spline with 2 degrees and 2 knots, positioned in January 2018 and January 2021 respectively, a polynomial regression, and local regression. Polynomial regression, with degree 3 at least, does not really seem to capture the trend, but rather picks up on an overall decrease from the beginning of the data to the end. The local regression & b-spline are fairly comparable, but we opt to use the b-spline because it is more interpretable and straightforward to use for prediction in an external context. Figure 4 shows the detrended energy use for Macalester College's main campus meter. There is no significant pattern around zero that comes as a result of the trend, as can be seen from the relatively constant horizontal trendline. The plot highlights the seasonal variations, which show higher energy use in winter months and lower energy use in the summer.
-
 
 ```{r, results = 'hide', fig.align='center'}
 # Spline
@@ -176,7 +172,7 @@ df_Leonard %>%
   theme(plot.caption = element_text(hjust = 0.5)) 
 ```
 
-Following the removal of the trend with the b-spline, we remove the seasonality by modeling the detrended energy usage as a function of month and semester status (ie, was the month during an academic semester or not). We did not remove three outliers values in 2020 and 2022, as they did not impact our seasonal model and as they were were functioning properly thanks to equipment updates. Additionally, we attempted to incorporate these outliers, but the PACF and ACF plots did not yield as favorable results as the current model without their inclusion. Furthermore, we chose not to use differencing because it did not fully remove the seasonality, leaving a heteroskedastic pattern of residuals. In Figure 5, the residuals are plotted, showing no trend around zero, with the horizontal average relatively constant. This indicates that we have successfully removed seasonality. 
+Following the removal of the trend with the b-spline, we remove the seasonality by modeling the detrended energy usage as a function of month and semester status (ie, was the month during an academic semester or not). We did not remove three outliers values in 2020 and 2022, as they did not impact our seasonal model and as they were were functioning properly thanks to equipment updates. Additionally, we attempted to incorporate these outliers, but the PACF and ACF plots did not yield as favorable results as the current model without their inclusion. Furthermore, we chose not to use differencing because it did not fully remove the seasonality, leaving a heteroskedastic pattern of residuals. In Figure 5, the residuals are plotted, showing no trend around zero, with the horizontal average relatively constant. This indicates that we have successfully removed seasonality.
 
 ```{r, echo = FALSE, results = 'hide', fig.align='center'}
 # linear model
@@ -192,6 +188,7 @@ df_Leonard <- df_Leonard %>%
 df_Leonard <- df_Leonard %>%
   mutate(Errors = Detrend_use - season)
 ```
+
 ```{r, echo = FALSE, fig.align='center'}
 df_Leonard %>%
   ggplot(aes(x = month, y = Errors)) + 
@@ -206,7 +203,6 @@ df_Leonard %>%
   theme(plot.title = element_text(hjust = 0.5)) +
   theme(plot.caption = element_text(hjust = 0.5)) 
 ```
-
 
 Next, we seek to model the remaining correlated noise. To do so, we analyze the ACF and PACF. The ACF drops to zero after lag 1, and the PACF plot decays/drops to zero after lag 2. The effective value of the ACF and PACF is below zero after lag 1 & lag 2 respectively, although it oscillates within the band indicated by the blue dashed line.
 
@@ -229,8 +225,7 @@ X <- model.matrix(trend.mod)[,-1] # removes intercept column
 # sarima(df_Leonard$use_per_day, p = 0, d = 0, q = 1, xreg = X) # BIC: 18.28
 ```
 
-
-After fitting all 3 models, we find that they all have similar BIC values (AR(2): 17.72942, MA(1): 17.70742, ARMA: 17.70663), indicating that they all fit the data relatively well. Q-Q plots indicate that all the models fit fairly well, and the residual plot shows that there is only one large outlier, constant across all models. The p-values are highest for the ARMA model, but seem to be around or below 0.05 for almost all values of all models. Thus, we opted for the simplest model, MA(1), as we determine that the goodness of fit is not improved enough in more complicated models. 
+After fitting all 3 models, we find that they all have similar BIC values (AR(2): 17.72942, MA(1): 17.70742, ARMA: 17.70663), indicating that they all fit the data relatively well. Q-Q plots indicate that all the models fit fairly well, and the residual plot shows that there is only one large outlier, constant across all models. The p-values are highest for the ARMA model, but seem to be around or below 0.05 for almost all values of all models. Thus, we opted for the simplest model, MA(1), as we determine that the goodness of fit is not improved enough in more complicated models.
 
 ```{r echo = FALSE, fig.show='hide', results = 'hide', fig.align='center'}
 new_date <- data.frame(
@@ -269,12 +264,10 @@ df_Leonard %>%
   theme(plot.caption = element_text(hjust = 0.5)) 
 ```
 
-
 ### Conclusions
 
 Using a b-spline to predict the trend, modeling seasonality based on both month and semester status, and employing an MA(1) model to address errors, we consistently obtain predicted energy values after March 2023. These predictions also align with the previously observed seasonal patterns. Consequently, our forecast suggests that Macalester College will maintain a stable energy consumption pattern over the next two years, with the previous decreasing trends expected to continue. However, the forecast also indicates a slight long-term increase in energy usage, especially in 2025, while still retaining seasonal variations. These predictions are consistent with practical expectations, given the ongoing updates to the campus's electrical equipment.
 
 Despite the alignment of our predictions with expectations, it's worth noting that the b-spline may exhibit overfitting to our current data. This is particularly evident in the post-2021 portion of the piecewise function, which contains relatively less data. Future projects could improve model fitting by incorporating more data from after 2021. Nevertheless, with the given data, our model appears to be reasonably robust. The forecasted model continues to suggest a steady trend in energy use, with seasonal variations remaining highest in the winter months and lowest in the summer months.
-
 
 ## References

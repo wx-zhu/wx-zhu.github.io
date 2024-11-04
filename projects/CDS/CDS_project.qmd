@@ -1,12 +1,12 @@
 ---
 title: "Exploring CIC-DUX4 Sarcoma Surfaceome by RNA-Sequencing"
 description: |
-  An in-depth assessment of the potential causal relationship between Self-Perception of Creativity and Participation in Arts using data set from National Archive of Data on Arts & Culture.
+  During summer intern at UMN, I investigated genes encoding surfaceome in CIC-DUX4 sarcoma, uncovering vital patterns through data analysis and dynamic visualizations.
 date: 08-30-2023
 image: CDS_heatmap.png
 image-alt: quizgrader logo
 categories:
-  - Pediatric disease
+  - Pediatric Cancer
   - Bulk RNA-Seq analysis
   - Research
   - High-Performance Computing (HPC)
