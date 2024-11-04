@@ -1,9 +1,19 @@
-/* css styles */
+/* CSS styles */
 html {
-  /*-- Main font sizes --*/
-  --title-size:      45px;
+  /* Main font sizes */
   --body-size:       1.06rem;
-  --code-size:       14px;
+  --code-size:       12px;
   --aside-size:      12px;
-  --fig-cap-size:    13px;
+  --fig-cap-size:    11px;
+}
+
+/* Apply font variables */
+body {
+  font-size: var(--body-size);
+}
+
+/* Navbar */
+.navbar-brand {
+  font-size: 22px !important;
+  font-weight: 500;
 }
