@@ -12,8 +12,6 @@ about:
   template: solana
 ---
 
-
 > Please check out this [*website*](https://wx-zhu.github.io/EMalgorithm_bookdown/) and feel free to reach out to me with questions and/or suggestions!
 
 I collaborated with Sarah Tannert-Lerner and Jingyi Guan to develop and publish an interactive R bookdown website on the EM (Expectation Maximization) Algorithm and its applications for the capstone class *Mathematical Statistics*. This comprehensive website incorporated detailed content, coding examples, and practical illustrations to facilitate a deeper understanding of the algorithm. Together, we created the website to ensure its accessibility and usefulness for learners.
-

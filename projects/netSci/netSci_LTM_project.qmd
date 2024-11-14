@@ -2,7 +2,7 @@
 title: "Linear Threshold Model and Simulation on Random Graphs"
 description: |
   Curious about how a single idea can ripple through a network, sparking trends and shaping behaviors? The Linear Threshold Model (LTM) explores how influence spreads through networks, mapping out how individuals adopt new ideas based on their friends' choices.
-date: 4-26-2024
+date: 5-03-2024
 image: LTM_animation_greedy.gif
 image-alt: quizgrader logo
 categories:

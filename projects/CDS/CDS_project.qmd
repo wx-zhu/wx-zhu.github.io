@@ -3,7 +3,7 @@ title: "Exploring CIC-DUX4 Sarcoma Surfaceome by RNA-Sequencing"
 description: |
   During summer intern at UMN, I investigated genes encoding surfaceome in CIC-DUX4 sarcoma, uncovering vital patterns through data analysis and dynamic visualizations.
 date: 08-30-2023
-image: CDS_heatmap.png
+image: CDS_poster.png
 image-alt: quizgrader logo
 categories:
   - Pediatric Cancer

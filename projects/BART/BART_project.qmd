@@ -1,0 +1,20 @@
+---
+title: "Exploring Bayesian Additive Regression Trees (BART)"
+description: |
+  An exploration of Bayesian Additive Regression Trees (BART), showcasing its strengths in predictive modeling and uncertainty quantification through theoretical insights and practical case studies.
+date: 04-28-2024
+image: BART_tree.png
+image-alt: quizgrader logo
+categories:
+  - Statistical Algorithm
+  - R
+about:
+  template: solana
+---
+
+> Please check out this [*website*](https://wx-zhu.github.io/BART_bookdown/) and feel free to reach out to me with questions and/or suggestions!
+
+During this project, I collaborated with Jingyi Guan and Alayna Johnson to  conduct a detailed exploration of Bayesian Additive Regression Trees (BART), emphasizing its unique strengths in predictive modeling and uncertainty quantification. BART is particularly powerful for handling complex regression and classification problems, offering robust insights where traditional models often fall short.
+
+To bring BART's capabilities to life, we created an interactive website that guides visitors through the model's theoretical foundations, practical implementation, and real-world applications. With case studies and hands-on examples, the site demonstrates BART's effectiveness and versatility, providing an accessible resource for anyone interested in advanced statistical modeling.
+

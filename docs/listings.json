@@ -3,6 +3,7 @@
     "listing": "/projects.html",
     "items": [
       "/projects/netSci/netSci_LTM_project.html",
+      "/projects/BART/BART_project.html",
       "/projects/spatial_UHI/spatial_UHI.html",
       "/projects/longitudinal/longitudinal_project.html",
       "/projects/timeSeries/timeSeries_mac_project.html",
