@@ -14,7 +14,7 @@ about:
     - icon: linkedin
       href: https://www.linkedin.com/in/wenxuan-zhu-751505230/
     - text: Résumé
-      href: https://drive.google.com/file/d/
+      href: https://drive.google.com/file/d/1M9hCJV1kWurH9uB-l_e8WLM3zLYP_Gh1/view?usp=sharing
 ---
 
 ::: {#intro-heading}

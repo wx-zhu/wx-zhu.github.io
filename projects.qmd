@@ -12,4 +12,3 @@ title-block-banner: true
 ---
 
 Check out my projects below to see some of my previous work using public data.
-
