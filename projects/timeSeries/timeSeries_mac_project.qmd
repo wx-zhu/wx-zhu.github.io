@@ -22,11 +22,13 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warnings=FALSE,
   )
 ```
 
+```{=html}
 <style type="text/css">
   body{
   font-size: 12pt;
 }
 </style>
+```
 
 <br>
 

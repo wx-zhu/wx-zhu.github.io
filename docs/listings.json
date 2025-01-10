@@ -2,6 +2,7 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/ClustVarSelect/ClustVarSelect.html",
       "/projects/netSci/netSci_LTM_project.html",
       "/projects/BART/BART_project.html",
       "/projects/spatial_UHI/spatial_UHI.html",
