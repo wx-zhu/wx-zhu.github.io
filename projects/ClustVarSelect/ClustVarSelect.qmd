@@ -19,10 +19,15 @@ about:
 The ClustVarSelect package represents a significant advancement in feature selection for high-dimensional biological data analysis. Our implementation combines power k-means clustering with Bregman divergences and sparse manifold decomposition (SMD) to identify discriminative features in single-cell RNA sequencing data. The package offers improved clustering robustness through adaptive annealing schemes and supports multiple data formats commonly used in bioinformatics workflows.
 
 Key innovations include:
+
 - Integration of power k-means with various Bregman divergences (Euclidean, KL, Itakura-Saito, logistic) for outlier resilience
+
 - Entropy-based (decision trees) and maximum margin (SVM) classification
+
 - Efficient parallel processing for large-scale datasets
+
 - Compatibility with sparse matrices, SingleCellExperiment, and Seurat objects
+
 - Comprehensive visualization and analysis tools
 
 ### Key Results
