@@ -14,7 +14,7 @@ about:
   image: causal_DAG.png
 ---
 
-> You can access the accompanying [*slides*](https://drive.google.com/file/d/1v_AOjV9Chf2u_KD2W_8NZCmUdZZe6rVv/view?usp=sharing) for a comprehensive overview! :)
+> You can access the accompanying [*slides*](Causal_slides_wzhu.pdf) for a comprehensive overview! :)
 
 In collaboration with Abbie Natkin, we conducted a comprehensive assessment to explore the potential causal relationship between self-perception of creativity (treatment) and participation in the arts (outcome) in the capstone class *Casual Inference*. To accomplish this, we analyzed a [dataset](https://www.icpsr.umich.edu/web/NADAC/studies/37853) obtained from the National Archive of Data on Arts & Culture, consisting of 3,447 adults with diverse demographics and socioeconomic backgrounds in the United States.
 
