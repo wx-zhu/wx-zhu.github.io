@@ -2,7 +2,7 @@
 title: "Causal Analysis of Debt-to-Income Ratio on Loan Default Risk"
 description: |
   Using instrumental variables and multiple imputation to identify the causal effect of debt-to-income ratio on loan default probability. This study addresses endogeneity through a two-stage least squares approach with pre-approval status as an instrument, revealing that higher DTI induced by institutional screening actually reduces default risk for compliant borrowers.
-date: 12-15-2024
+date: 12-15-2025
 image: loan-default.png
 image-alt: Loan default data imputation visualization
 categories:
