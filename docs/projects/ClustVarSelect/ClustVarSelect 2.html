@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-12-13">
+<meta name="description" content="An R package implementing power k-means clustering with Bregman divergences and sparse manifold decomposition (SMD) for effective feature selection in high-dimensional biological data, particularly single-cell RNA sequencing data.">
 
-<title>Wenxuan Zhu</title>
+<title>ClustVarSelect: Robust Feature Selection for Single-Cell RNA Sequencing Data – Wenxuan Zhu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/icon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Wenxuan Zhu</span>
     </a>
   </div>
@@ -89,11 +91,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -110,78 +112,95 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
-   
   <ul>
-  <li><a href="#about-wenxuan" id="toc-about-wenxuan" class="nav-link active" data-scroll-target="#about-wenxuan">About Wenxuan</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  <li><a href="#a-little-more-about-me" id="toc-a-little-more-about-me" class="nav-link" data-scroll-target="#a-little-more-about-me">A little more about Me</a></li>
+  <li><a href="#key-results" id="toc-key-results" class="nav-link active" data-scroll-target="#key-results">Key Results</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-
-
-<div class="quarto-about-trestles">
+<div class="quarto-about-solana column-body">
   <div class="about-entity">
-    <img src="images/wzhu.jpeg" class="about-image
-  round " style="height: 20em; width: 20em;">
-    <div class="about-links">
-  <a href="mailto:zhuwx@umich.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://github.com/wx-zhu" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://www.linkedin.com/in/wenxuan-zhu-751505230/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://drive.google.com/file/d/1GgZQOh-EjsGKGeiSrSVpzOGc46SrZcHo/view?usp=sharing" class="about-link" rel="" target="">
-     <span class="about-link-text">Résumé</span>
-  </a>
-</div>
+    <div class="entity-contents">
+      <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">ClustVarSelect: Robust Feature Selection for Single-Cell RNA Sequencing Data</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Feature Selection</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">R Package</div>
+    <div class="quarto-category">scRNA-Seq Data</div>
   </div>
-  <div class="about-contents"><div id="intro-heading">
-<section id="about-wenxuan" class="level2">
-<h2 data-anchor-id="about-wenxuan">About Wenxuan</h2>
-<p>Hi, I’m Wenxuan Zhu (<a href="https://namedrop.io/wenxuanzhu" target="_blank" rel="noopener">Pronunciation</a>). <br></p>
-<p>I am a Biostatistics MS student at University of Michigan – Ann Arbor. Previously, I graduated from Macalester College with a major in Statistics and a minor in Economics. <br></p>
-<p>I’m passionate about using data to address societal challenges and have enjoyed applying statistical methods across diverse fields, including public health, social sciences, and machine learning. Check out my <a href="https://wx-zhu.github.io//projects.html">Projects</a> tab to explore my skills and see examples of my work.</p>
-</section>
-</div></div>
-</div>
-
-<section id="education" class="level3">
-<h3 data-anchor-id="education">Education</h3>
-<p><strong>University of Michigan – Ann Arbor</strong>, MI<br>
-MS in Biostatistics, Expected May 2026</p>
-<p><strong>Macalester College</strong>, Saint Paul, MN<br>
-BA in Statistics, Minor in Economics, Graduated May 2024</p>
-</section>
-<section id="a-little-more-about-me" class="level2">
-<h2 data-anchor-id="a-little-more-about-me">A little more about Me</h2>
-<p>Outside of academics, I enjoy capturing photos of the sky, hiking with family and friends, savoring delicious foods, solving puzzles, visiting museums, and immersing myself in mystery fiction books. However, what I cherish most is the constant exploration of my interests and the pure joy that comes with it! :)</p>
+  </div>
 <div>
+  <div class="description">
+    <p>An R package implementing power k-means clustering with Bregman divergences and sparse manifold decomposition (SMD) for effective feature selection in high-dimensional biological data, particularly single-cell RNA sequencing data.</p>
+  </div>
+</div>
+<div class="quarto-title-meta">
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 13, 2024</p>
+    </div>
+  </div>
+  </div>
+</header> 
+      <div class="about-contents"><main class="content" id="quarto-document-content">
 
-</div>
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p><img src="images/me_2.jpg" class="img-fluid" style="width:30.0%"> <img src="images/sky.JPG" class="img-fluid" style="width:30.0%"> <img src="images/me_3.jpeg" class="img-fluid" style="width:30.0%"> <img src="images/puzzle.JPG" class="img-fluid" style="width:30.0%"> <img src="images/me_5.jpeg" class="img-fluid" style="width:30.0%"> <img src="images/art.jpeg" class="img-fluid" style="width:30.0%"></p>
-</div>
-</div>
-</div>
-
+<blockquote class="blockquote">
+<p>You can explore our project materials through the <a href="https://github.com/wx-zhu/ClustVarSelect"><em>GitHub repository</em></a> and our detailed <a href="https://drive.google.com/file/d/1-dFAEv308VRCEJGUnKGpbklNZtgVSVIU/view?usp=sharing"><em>project report</em></a>.</p>
+</blockquote>
+<p>The ClustVarSelect package represents a significant advancement in feature selection for high-dimensional biological data analysis. Our implementation combines power k-means clustering with Bregman divergences and sparse manifold decomposition (SMD) to identify discriminative features in single-cell RNA sequencing data. The package offers improved clustering robustness through adaptive annealing schemes and supports multiple data formats commonly used in bioinformatics workflows.</p>
+<p>Key innovations include:</p>
+<ul>
+<li><p>Integration of power k-means with various Bregman divergences (Euclidean, KL, Itakura-Saito, logistic) for outlier resilience</p></li>
+<li><p>Entropy-based (decision trees) and maximum margin (SVM) classification</p></li>
+<li><p>Efficient parallel processing for large-scale datasets</p></li>
+<li><p>Compatibility with sparse matrices, SingleCellExperiment, and Seurat objects</p></li>
+<li><p>Comprehensive visualization and analysis tools</p></li>
+</ul>
+<section id="key-results" class="level3">
+<h3 data-anchor-id="key-results">Key Results</h3>
+<section id="synthetic-data-performance" class="level4">
+<h4 data-anchor-id="synthetic-data-performance">Synthetic Data Performance</h4>
+<p>Testing on synthetic datasets with varying sample sizes, feature counts, cluster numbers, and noise levels demonstrated that our Bregman power K-means implementation consistently outperformed regular K-means clustering. The improvement was particularly notable when dealing with:</p>
+<ul>
+<li><p>Increased cluster numbers</p></li>
+<li><p>Higher noise levels</p></li>
+<li><p>Greater outlier proportions</p></li>
+</ul>
+</section>
+<section id="pbmc-3k-dataset-analysis" class="level4">
+<h4 data-anchor-id="pbmc-3k-dataset-analysis">PBMC-3K Dataset Analysis</h4>
+<p>On the gold-standard PBMC-3K dataset, our implementation showed several key advantages:</p>
+<ol type="1">
+<li><p><strong>Improved Clustering</strong>: The Bregman power K-means produced clustering results more consistent with Seurat’s established output compared to regular K-means.</p></li>
+<li><p><strong>Enhanced Feature Selection</strong>: The SMD algorithm selected more marker genes than Seurat’s standard approach, demonstrating superior biological relevance.</p></li>
+<li><p><strong>Biological Significance</strong>: Pathway enrichment analysis of SMD-selected features revealed meaningful immune pathways, aligning with the expected biology of peripheral blood samples.</p></li>
+</ol>
+</section>
+<section id="large-scale-application" class="level4">
+<h4 data-anchor-id="large-scale-application">Large-Scale Application</h4>
+<p>Testing on a monkey single-cell atlas (56,636 cells across three developmental stages) revealed:</p>
+<ul>
+<li><p>The Euclidean version of Bregman power k-means successfully identified major cell types</p></li>
+<li><p>Processing time was approximately 3 minutes for this large dataset</p></li>
+<li><p>While effective for clustering, the SMD component showed computational scaling challenges with larger datasets</p></li>
+</ul>
+<p>This project was developed in collaboration with Zhiyuan Yu and Adrian Con Garcia, combining expertise in computational biology, statistical methods, and software development to create a robust tool for modern single-cell analysis.</p>
+<p><img src="SMD.png" class="img-fluid"></p>
+<p><img src="SMD2.png" class="img-fluid"></p>
 
 
 </section>
-
-</main> <!-- /main -->
+</section>
+</main></div>
+    </div>
+    <img src="bergman.png" alt="quizgrader logo" class="about-image
+  rounded " style="width: 15em;">
+  </div>
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

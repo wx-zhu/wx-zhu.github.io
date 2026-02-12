@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-08-30">
+<meta name="description" content="During summer intern at UMN, I investigated genes encoding surfaceome in CIC-DUX4 sarcoma, uncovering vital patterns through data analysis and dynamic visualizations.">
 
-<title>Wenxuan Zhu</title>
+<title>Exploring CIC-DUX4 Sarcoma Surfaceome by RNA-Sequencing – Wenxuan Zhu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/icon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,17 +70,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Wenxuan Zhu</span>
     </a>
   </div>
@@ -89,11 +91,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -107,81 +109,49 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#about-wenxuan" id="toc-about-wenxuan" class="nav-link active" data-scroll-target="#about-wenxuan">About Wenxuan</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  <li><a href="#a-little-more-about-me" id="toc-a-little-more-about-me" class="nav-link" data-scroll-target="#a-little-more-about-me">A little more about Me</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-
-
-<div class="quarto-about-trestles">
+<div class="quarto-about-solana column-body">
   <div class="about-entity">
-    <img src="images/wzhu.jpeg" class="about-image
-  round " style="height: 20em; width: 20em;">
-    <div class="about-links">
-  <a href="mailto:zhuwx@umich.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://github.com/wx-zhu" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://www.linkedin.com/in/wenxuan-zhu-751505230/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://drive.google.com/file/d/1GgZQOh-EjsGKGeiSrSVpzOGc46SrZcHo/view?usp=sharing" class="about-link" rel="" target="">
-     <span class="about-link-text">Résumé</span>
-  </a>
-</div>
+    <div class="entity-contents">
+      <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exploring CIC-DUX4 Sarcoma Surfaceome by RNA-Sequencing</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Pediatric Cancer</div>
+    <div class="quarto-category">Bulk RNA-Seq analysis</div>
+    <div class="quarto-category">Research</div>
+    <div class="quarto-category">High-Performance Computing (HPC)</div>
   </div>
-  <div class="about-contents"><div id="intro-heading">
-<section id="about-wenxuan" class="level2">
-<h2 data-anchor-id="about-wenxuan">About Wenxuan</h2>
-<p>Hi, I’m Wenxuan Zhu (<a href="https://namedrop.io/wenxuanzhu" target="_blank" rel="noopener">Pronunciation</a>). <br></p>
-<p>I am a Biostatistics MS student at University of Michigan – Ann Arbor. Previously, I graduated from Macalester College with a major in Statistics and a minor in Economics. <br></p>
-<p>I’m passionate about using data to address societal challenges and have enjoyed applying statistical methods across diverse fields, including public health, social sciences, and machine learning. Check out my <a href="https://wx-zhu.github.io//projects.html">Projects</a> tab to explore my skills and see examples of my work.</p>
-</section>
-</div></div>
-</div>
-
-<section id="education" class="level3">
-<h3 data-anchor-id="education">Education</h3>
-<p><strong>University of Michigan – Ann Arbor</strong>, MI<br>
-MS in Biostatistics, Expected May 2026</p>
-<p><strong>Macalester College</strong>, Saint Paul, MN<br>
-BA in Statistics, Minor in Economics, Graduated May 2024</p>
-</section>
-<section id="a-little-more-about-me" class="level2">
-<h2 data-anchor-id="a-little-more-about-me">A little more about Me</h2>
-<p>Outside of academics, I enjoy capturing photos of the sky, hiking with family and friends, savoring delicious foods, solving puzzles, visiting museums, and immersing myself in mystery fiction books. However, what I cherish most is the constant exploration of my interests and the pure joy that comes with it! :)</p>
+  </div>
 <div>
-
+  <div class="description">
+    <p>During summer intern at UMN, I investigated genes encoding surfaceome in CIC-DUX4 sarcoma, uncovering vital patterns through data analysis and dynamic visualizations.</p>
+  </div>
 </div>
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p><img src="images/me_2.jpg" class="img-fluid" style="width:30.0%"> <img src="images/sky.JPG" class="img-fluid" style="width:30.0%"> <img src="images/me_3.jpeg" class="img-fluid" style="width:30.0%"> <img src="images/puzzle.JPG" class="img-fluid" style="width:30.0%"> <img src="images/me_5.jpeg" class="img-fluid" style="width:30.0%"> <img src="images/art.jpeg" class="img-fluid" style="width:30.0%"></p>
+<div class="quarto-title-meta">
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 30, 2023</p>
+    </div>
+  </div>
+  </div>
+</header> 
+      <div class="about-contents"><main class="content" id="quarto-document-content">
+<p>During my research internship in <a href="https://med.umn.edu/pediatrics/research/research-laboratories-and-programs/bosnakovski-lab">Bosnakovski Lab</a> in the Department of Pediatrics at the University of Minnesota, I focused on investigating genes encoding surface proteins related to CIC-DUX4 sarcoma (CDS), a rare and aggressive pediatric cancer with a median survival of less than two years.</p>
+<p>Throughout my research, I conducted Differential Experssion analysis on generated cell lines and tumor samples using <code>DESeq2</code> and <code>texima</code> packages. This analytical approach enabled the identification of genes exhibiting altered expression levels. The multiple test correction was undertaken using the Benjamini and Hochberg method, with a stringent criterion of adjusted p-value &lt; 0.05. I also crafted impactful visual aids, including heatmaps, volcano plots, and waterfall plots. These tools played a pivotal role in conveying the intricacies of gene expression patterns, making the research findings accessible and comprehensible to a broader audience. One of the highlights of this research endeavor was the identification of a subset of 19 genes, characterized by their dual attributes: inclusion in the surfaceome gene repertoire and consistent differential expression across cell lines following iP300w treatment. These genes represent a promising next step for further exploration and potential antibody development to CDS.</p>
+<p>I was honored to present this study at the <a href="https://cancer.umn.edu/events/masonic-cancer-center-research-symposium-1">Masonic Cancer Center Research Symposium 2023</a> and <a href="https://www.jointmathematicsmeetings.org/meetings/national/jmm2024/2300_program.html">2024 Joint Mathematics Meetings (JMM)</a>. Here is my <a href="https://drive.google.com/file/d/1k57Yca9sB_MrSVVBasW5qEHusZ66J-ge/view?usp=sharing"><em>poster</em></a>.</p>
+<p><img src="lab.png" class="img-fluid"></p>
+
+
+</main></div>
+    </div>
+    <img src="CDS_poster.png" alt="quizgrader logo" class="about-image
+  rounded " style="width: 15em;">
+  </div>
 </div>
-</div>
-</div>
-
-
-
-</section>
-
-</main> <!-- /main -->
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -1,0 +1,27 @@
+---
+title: "Causal Analysis of Debt-to-Income Ratio on Loan Default Risk"
+description: |
+  Using instrumental variables and multiple imputation to identify the causal effect of debt-to-income ratio on loan default probability. This study addresses endogeneity through a two-stage least squares approach with pre-approval status as an instrument, revealing that higher DTI induced by institutional screening actually reduces default risk for compliant borrowers.
+date: 12-15-2024
+image: loan-default.png
+image-alt: Loan default data imputation visualization
+categories:
+  - Causal Inference
+  - Missing Data
+  - R
+about:
+  template: solana
+---
+
+You can access our final project [*report*](https://drive.google.com/file/d/1LdIeN9aHAtIlCIV-35ScA-GNQuJMKm1G/view?usp=sharing), [*slides*](https://drive.google.com/file/d/1EDYUJxHc-xi4xpYS8wRmQR96S8f6ncQi/view?usp=sharing), and [*github repo*](https://github.com/wx-zhu/Causal_DTItoLoanDefault) here. :) 
+
+In collaboration with Rajvi Jasani and Yiqiao Zhu, we conducted a comprehensive causal analysis of how debt-to-income ratio (DTI) affects loan default probability using a 2019 bank loan dataset (N=148,670). Our analysis tackled two major challenges: severe Missing Not At Random (MNAR) patterns in DTI data (44.5% missing among defaults vs. 7.0% among non-defaults) and endogeneity due to unobserved borrower characteristics.
+
+We employed Multiple Imputation by Chained Equations (MICE) combined with Two-Stage Least Squares (2SLS) instrumental variables estimation, using pre-approval status as our instrument (first-stage F-statistic = 18.95). Our findings revealed a striking sign reversal: while naive OLS showed a small positive association ($\beta$= 0.002), the causal IV estimate demonstrated that a one percentage point increase in DTI actually reduces default probability by 14.3 percentage points ($\beta$ = -0.143, p \< 0.001) for the complier population. This counterintuitive result reflects that pre-approved borrowers undergo stricter institutional screening, indicating superior creditworthiness despite mechanically higher approved loan amounts. Our analysis challenges conventional underwriting wisdom and underscores the importance of comprehensive screening over mechanical DTI cutoffs alone.
+
+```{r, echo=FALSE, fig.align='center', out.width='100%', fig.cap="Comparison of Different Analysis Strategies for DTI Effect Estimates"}
+knitr::include_graphics("DTI_coef.png")
+```
+
+
+
