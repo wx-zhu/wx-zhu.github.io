@@ -4,7 +4,7 @@ description: |
   A case study of [Macalester College](https://www.macalester.edu/) in St. Paul, MN uses time series analysis to model and forecast energy use using the campus' main meter.
 date: 10-23-2023
 image: timeSeries_pred.png
-image-alt: quizgrader logo
+image-alt: Forecast plot of Macalester College electricity usage
 categories:
   - Correlated Data
   - Time Series Data 

@@ -4,7 +4,7 @@ description: |
   An R package implementing power k-means clustering with Bregman divergences and sparse manifold decomposition (SMD) for effective feature selection in high-dimensional biological data, particularly single-cell RNA sequencing data.
 date: 12-13-2024
 image: bergman.png
-image-alt: quizgrader logo
+image-alt: Bregman divergence diagram for the ClustVarSelect R package
 categories:
   - Feature Selection
   - R 

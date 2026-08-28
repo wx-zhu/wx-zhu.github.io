@@ -4,7 +4,7 @@ description: |
   An exploration of Bayesian Additive Regression Trees (BART), showcasing its strengths in predictive modeling and uncertainty quantification through theoretical insights and practical case studies.
 date: 04-28-2024
 image: BART_tree.png
-image-alt: quizgrader logo
+image-alt: Example regression tree from the BART model
 categories:
   - Statistical Algorithm
   - R

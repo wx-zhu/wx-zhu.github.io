@@ -4,7 +4,7 @@ description: |
   Urban heat island effect (UHI) poses significant health risks and varies across American cities. This report uses Spatial Autoregressive (SAR) and Conditional Autoregressive (CAR) models to analyze UHI trends in Minneapolis-St. Paul and Phoenix, comparing model performance between the two cities.
 date: 12-09-2023
 image: UHI.png
-image-alt: quizgrader logo
+image-alt: Map of urban heat island effect in Twin Cities and Phoenix
 categories:
   - Correlated Data
   - Spatial Data 
