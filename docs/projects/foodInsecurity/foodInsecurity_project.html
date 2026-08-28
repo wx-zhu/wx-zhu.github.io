@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-12-11">
+<meta name="description" content="Using Generalized Estimating Equations (GEE) with robust standard errors, this study examines how changes in household food security from kindergarten through 5th grade predict children’s academic achievement and whether these associations vary by family socioeconomic status.">
 
-<title>Wenxuan Zhu</title>
+<title>Household Food Insecurity and Children’s Development: A Longitudinal GEE Analysis – Wenxuan Zhu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,23 +31,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/icon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,17 +77,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Wenxuan Zhu</span>
     </a>
   </div>
@@ -96,11 +98,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -114,79 +116,59 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#about-wenxuan" id="toc-about-wenxuan" class="nav-link active" data-scroll-target="#about-wenxuan">About Wenxuan</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  <li><a href="#a-little-more-about-me" id="toc-a-little-more-about-me" class="nav-link" data-scroll-target="#a-little-more-about-me">A little more about Me</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-
-
-<div class="quarto-about-trestles">
+<div class="quarto-about-solana column-body">
   <div class="about-entity">
-    <img src="images/wzhu.jpeg" class="about-image
-  round " style="height: 20em; width: 20em;">
-<header id="title-block-header" class="quarto-title-block"></header>
-    <div class="about-links">
-  <a href="mailto:zhuwx@umich.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://github.com/wx-zhu" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://www.linkedin.com/in/wenxuan-zhu-751505230/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://drive.google.com/file/d/1GgZQOh-EjsGKGeiSrSVpzOGc46SrZcHo/view?usp=sharing" class="about-link" rel="" target="">
-     <span class="about-link-text">Résumé</span>
-  </a>
-</div>
+    <div class="entity-contents">
+      <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Household Food Insecurity and Children’s Development: A Longitudinal GEE Analysis</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Correlated Data</div>
+    <div class="quarto-category">Longitudinal Data</div>
+    <div class="quarto-category">R</div>
   </div>
-  <div class="about-contents"><div id="intro-heading">
-<section id="about-wenxuan" class="level2">
-<h2 data-anchor-id="about-wenxuan">About Wenxuan</h2>
-<p>Hi, I’m Wenxuan Zhu (<a href="https://namedrop.io/wenxuanzhu" target="_blank" rel="noopener">Pronunciation</a>). <br></p>
-<p>I hold an MS in Biostatistics from the University of Michigan – Ann Arbor. Previously, I graduated with honors from Macalester College with a major in Statistics and a minor in Economics. <br></p>
-<p>I’m passionate about using data to address societal challenges and have enjoyed applying statistical methods across diverse fields, including public health, social sciences, and machine learning. Check out my <a href="projects.html">Projects</a> tab to explore my skills and see examples of my work.</p>
-</section>
-</div></div>
+  </div>
+<div>
+  <div class="description">
+    <p>Using Generalized Estimating Equations (GEE) with robust standard errors, this study examines how changes in household food security from kindergarten through 5th grade predict children’s academic achievement and whether these associations vary by family socioeconomic status.</p>
+  </div>
 </div>
-
-<section id="education" class="level3">
-<h3 data-anchor-id="education">Education</h3>
-<p><strong>University of Michigan – Ann Arbor</strong>, MI<br>
-MS in Biostatistics, Graduated May 2026</p>
-<p><strong>Macalester College</strong>, Saint Paul, MN<br>
-BA in Statistics, Minor in Economics, Graduated May 2024</p>
-</section>
-<section id="a-little-more-about-me" class="level2">
-<h2 data-anchor-id="a-little-more-about-me">A little more about Me</h2>
-<p>Outside of academics, I enjoy capturing photos of the sky, hiking with family and friends, savoring delicious foods, solving puzzles, visiting museums, and immersing myself in mystery fiction books. However, what I cherish most is the constant exploration of my interests and the pure joy that comes with it! :)</p>
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<p><img src="images/me_2.jpg" class="img-fluid" style="width:30.0%"> <img src="images/sky.JPG" class="img-fluid" style="width:30.0%"> <img src="images/me_3.jpeg" class="img-fluid" style="width:30.0%"> <img src="images/puzzle.JPG" class="img-fluid" style="width:30.0%"> <img src="images/me_5.jpeg" class="img-fluid" style="width:30.0%"> <img src="images/art.jpeg" class="img-fluid" style="width:30.0%"></p>
+<div class="quarto-title-meta">
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 11, 2025</p>
+    </div>
+  </div>
+  </div>
+</header> 
+      <div class="about-contents"><main class="content" id="quarto-document-content">
+<blockquote class="blockquote">
+<p>You can access our final <a href="FoodInsecurity_GEE_Report.pdf"><em>report</em></a> and <a href="FoodInsecurity_GEE_Presentation.pdf"><em>presentation</em></a> here. :)</p>
+</blockquote>
+<p>For my final project in BIOSTAT 653 (Applied Longitudinal Analysis), we examined how changes in household food security from kindergarten through 5th grade predict children’s mathematics and science achievement, using data from the Early Childhood Longitudinal Study, Kindergarten Class of 2010-11 (ECLS-K:2011). I modeled population-averaged effects of food security on child outcomes over three waves (Spring Kindergarten, Spring 1st Grade, and Spring 5th Grade) using GEE with robust standard errors, adjusting for a comprehensive set of confounders including race, disability status, household size, and urbanicity.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="growth_trajectories.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Math and Science Achievement Growth by Food Security Status</figcaption>
+</figure>
 </div>
 </div>
 </div>
+<p>Children in more food-secure households showed consistently higher math and science achievement across all three waves, with the gap widening as children progressed from kindergarten to 5th grade. I also tested whether family socioeconomic status moderated this relationship and ran a series of sensitivity analyses, including alternative correlation structures, a categorical food-security specification, and a complete-case comparison, to confirm the robustness of these findings.</p>
 
 
-
-</section>
-
-</main> <!-- /main -->
+</main></div>
+    </div>
+    <img src="growth_trajectories.png" alt="Math and science achievement growth trajectories by food security status" class="about-image
+  rounded " style="width: 15em;">
+  </div>
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {

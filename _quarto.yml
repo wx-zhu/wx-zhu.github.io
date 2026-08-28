@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!TODOprojects/"
 
 website:
   favicon: images/icon.png
