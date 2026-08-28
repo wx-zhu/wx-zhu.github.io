@@ -4,7 +4,7 @@ description: |
   Using robust Generalized Estimating Equations (GEE) model, we identified statistically significant improvements in speed processing among adults who received  training.
 date: 11-07-2023
 image: longitudinal.png
-image-alt: quizgrader logo
+image-alt: GEE model results for speed processing training in older adults
 categories:
   - Correlated Data
   - Longitudinal Data 

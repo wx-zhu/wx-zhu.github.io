@@ -4,7 +4,7 @@ description: |
   An in-depth assessment of the potential causal relationship between Self-Perception of Creativity and Participation in Arts using data set from National Archive of Data on Arts & Culture.
 date: 05-02-2023
 image: causal_DAG.png
-image-alt: quizgrader logo
+image-alt: Causal DAG for self-perception of creativity and arts participation
 categories:
   - Causal Inference
   - R

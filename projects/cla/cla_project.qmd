@@ -3,9 +3,8 @@ title: "Matrix Completion and Recommendation Systems"
 description: "How does Netflix always know exactly which movies you like? Uncover recommendation system using Applied Singular Value Thresholding (SVT) and Cosine Similarity."
 date: 05-04-2023
 image: cla_table.png
-image-alt: quizgrader logo
+image-alt: Table of top movie recommendations from the matrix completion model
 categories:
-  - Computational Linear Algebra
   - Recommender System
   - R
 about:
@@ -14,7 +13,7 @@ about:
 
 > To access the detailed findings and insights from our project, please download the complete paper [*here*](Recommendation_Systems_wzhu.pdf).
 
-I collaborated with Shengyuan Wang on this project, driven by our shared curiosity to unravel the mystery behind Netflix's recommendation system, which seems to have an uncanny ability to predict the movies we'll enjoy. To tackle the challenge presented by large and sparse user-item matrices in collaborative filtering for recommendation systems, we leveraged advanced techniques such as *Singular Value Thresholding (SVT) and Cosine Similarity* using [MoiveLens Latest Dataset](https://grouplens.org/datasets/movielens/latest/).
+I collaborated with Shengyuan Wang on this project, driven by our shared curiosity to unravel the mystery behind Netflix's recommendation system, which seems to have an uncanny ability to predict the movies we'll enjoy. To tackle the challenge presented by large and sparse user-item matrices in collaborative filtering for recommendation systems, we leveraged advanced techniques such as *Singular Value Thresholding (SVT) and Cosine Similarity* using [MovieLens Latest Dataset](https://grouplens.org/datasets/movielens/latest/).
 
 ```{r, echo=FALSE, fig.align='center', out.width='80%', fig.cap="Demonstration of Matrix Completion Method"}
 knitr::include_graphics("cla_matrix.png")
